@@ -1,5 +1,12 @@
 defmodule AhorcadoTest do
   use ExUnit.Case
+  doctest Ahorcado
+
+  defmodule TestGenerator do # Se define un submódulo dónde se implementa el contrato del Ahorcado.Game.Goal.API
+    @behaviour Game.Goal.Api
+
+    def generate, do: "palabraclave" # Siempre devuelvo la palabra que cumple con mi test
+  end
   
   describe "take_a_guess/2" do
 
